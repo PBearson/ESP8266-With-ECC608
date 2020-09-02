@@ -8,4 +8,4 @@ This sample project will establish an I<sup>2</sup>C connection with the ECC608 
 
 Once the hardware has been appropriately configured, simply run "make flash monitor" to build and upload the project to your ESP8266.
 
-This project was built using ESP8266_RTOS_SDK release/v3.3: https://github.com/espressif/ESP8266_RTOS_SDK/tree/release/v3.3
+This project was built using [ESP8266_RTOS_SDK release/v3.3](https://github.com/espressif/ESP8266_RTOS_SDK/tree/release/v3.3).
