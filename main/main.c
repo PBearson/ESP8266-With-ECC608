@@ -30,6 +30,7 @@ void app_main()
 	int i;
 
 	// Initialize the crypto chip
+	printf("Initializing chip\n");
 	assert(ATCA_SUCCESS == atcab_init(&cfg));
 
 	// Get the crypto chip serial number
