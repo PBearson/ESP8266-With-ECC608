@@ -14,7 +14,7 @@
 void app_main()
 {
 	// Change this configuration as needed
-	// I2C pins are defined in hal_esp8266_i2c.c
+	// I2C pins are defined in components/cryptoauthlib/src/hal_esp8266_i2c.c
 	ATCAIfaceCfg cfg = 
 	{
 		.devtype = ATECC608A,
