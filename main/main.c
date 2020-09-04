@@ -27,7 +27,6 @@ void app_main()
 	{
 		.devtype = ATECC608A,
 		.atcai2c.bus = I2C_NUM_0,
-		.atcai2c.slave_address = 0x20,
 		.atcai2c.baud = 400000,
 		.wake_delay = 1500,
 		.rx_retries = 20,
@@ -35,7 +34,14 @@ void app_main()
 
 	// Initialize the crypto chip
 	printf("Initializing chip\n");
-	assert(ATCA_SUCCESS == atcab_init(&cfg));
+	int ret = -1;
+	for(int i = 0; i < 128; i++)
+	{
+		cfg.atcai2c.slave_address = i;
+		ret = atcab_init(&cfg);
+		if(ret == ATCA_SUCCESS) break;
+	}
+	assert(ret == ATCA_SUCCESS);
 
 	// Get the crypto chip serial number
 	assert(ATCA_SUCCESS == atcab_read_serial_number(serialnum));
